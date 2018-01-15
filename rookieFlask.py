@@ -22,5 +22,12 @@ def test_log():
     return "finish"
 
 
+@app.route('/testConfig')
+def test_config():
+    value = ConfigUtil.getValue(section='SectionA', key='a')
+    logger.info(value)
+    return value
+
+
 if __name__ == '__main__':
     app.run()
